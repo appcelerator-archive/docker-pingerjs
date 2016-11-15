@@ -1,0 +1,8 @@
+{
+  "name": "pingerjs",
+  "version": "1.0.0",
+  "description": "Simple Node.js app that responds with pong at /ping\"",
+  "main": "server.js",
+  "author": "Tony Pujals (http://twitter.com/subfuzion)",
+  "license": "ISC"
+}
