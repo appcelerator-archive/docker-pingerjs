@@ -9,8 +9,12 @@ const hostname = os.hostname();
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
+  // Since HTTP/1.1 defaults to persistent connections, ensure we close the
+  // connection with the response to make it easier to demo automatic
+  // round-robin load balancing when refreshing in a browser
+  // (this isn't an issue for curl since automatically uses HTTP/1.0 connections)
   res.setHeader('Connection', 'close');
+  res.setHeader('Content-Type', 'text/plain');
   res.end(`[${hostname}] hello\n`);
 });
 
