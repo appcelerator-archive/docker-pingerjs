@@ -12,7 +12,9 @@ const server = http.createServer((req, res) => {
   // Since HTTP/1.1 defaults to persistent connections, ensure we close the
   // connection with the response to make it easier to demo automatic
   // round-robin load balancing when refreshing in a browser
-  // (this isn't an issue for curl since automatically uses HTTP/1.0 connections)
+  // (this isn't an issue for when using curl since it automatically closes
+  // the connection).
+ 
   res.setHeader('Connection', 'close');
   res.setHeader('Content-Type', 'text/plain');
   res.end(`[${hostname}] hello\n`);
