@@ -1,6 +1,6 @@
 # appcelerator/pingerjs
 
-Simple service for testing purposes. Responds with `[<hostname>]`hello` to any `GET` request.
+Simple service for demo purposes. Responds with `[<hostname>]`hello` to any `GET` request.
 It's a slight variation on the [canonical Node.js example](https://nodejs.org/en/about/).
 
 ## Running pingerjs
