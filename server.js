@@ -14,7 +14,6 @@ const server = http.createServer((req, res) => {
   // round-robin load balancing when refreshing in a browser
   // (this isn't an issue when using curl since it automatically closes
   // the connection).
- 
   res.setHeader('Connection', 'close');
   res.setHeader('Content-Type', 'text/plain');
   res.end(`[${hostname}] hello\n`);
